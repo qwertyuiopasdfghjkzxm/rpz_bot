@@ -5,19 +5,12 @@ from aiogram.types import CallbackQuery, MediaGroup
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
-import os
 
 bot = Bot("8429333528:AAFvdMZ9H45Oo2W7ln7sezTu2xt14Yta2HI")
 Storage = MemoryStorage()
 dp = Dispatcher(bot, storage=Storage)
 
-
-db_dir = '/app/data'
-if not os.path.exists(db_dir):
-    os.makedirs(db_dir)
-
-db_path = os.path.join(db_dir, 'bot.db')
-db = sql.connect(db_path)
+db = sql.connect('bot.db')
 db.isolation_level = None
 cur = db.cursor()
 
