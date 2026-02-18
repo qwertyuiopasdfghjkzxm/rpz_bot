@@ -11,7 +11,12 @@ Storage = MemoryStorage()
 dp = Dispatcher(bot, storage=Storage)
 
 
-db = sql.connect('bot.db', timeout=20, check_same_thread=False)
+db_dir = '/app/data'
+if not os.path.exists(db_dir):
+    os.makedirs(db_dir)
+
+db_path = os.path.join(db_dir, 'bot.db')
+conn = sqlite3.connect(db_path)
 db.isolation_level = None
 cur = db.cursor()
 
