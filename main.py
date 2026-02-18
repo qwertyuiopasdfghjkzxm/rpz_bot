@@ -5,6 +5,7 @@ from aiogram.types import CallbackQuery, MediaGroup
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
+import os
 
 bot = Bot("8429333528:AAFvdMZ9H45Oo2W7ln7sezTu2xt14Yta2HI")
 Storage = MemoryStorage()
