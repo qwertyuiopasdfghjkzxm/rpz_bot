@@ -17,7 +17,7 @@ if not os.path.exists(db_dir):
     os.makedirs(db_dir)
 
 db_path = os.path.join(db_dir, 'bot.db')
-conn = sql.connect(db_path)
+db = sql.connect(db_path)
 db.isolation_level = None
 cur = db.cursor()
 
